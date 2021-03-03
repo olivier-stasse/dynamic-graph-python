@@ -14,7 +14,6 @@ from __future__ import print_function
 import sys
 
 from .entity import Entity
-from .matlab import matlab
 from .signal_base import SignalBase
 
 
@@ -64,7 +63,7 @@ setattr(SignalBase, 'm', property(PrettySignalPrint))
 
 # Enable the same as 'm', but directly on the signal object.
 def sigRepr(self):
-    return self.name + ' = ' + str(matlab(self.value))
+    return self.name + ' = ' + str(self.value)
 
 
 def sigCall(sig, iter):
